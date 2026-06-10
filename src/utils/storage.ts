@@ -1,10 +1,21 @@
 export interface UserAccount {
     id: string;
     name: string;
-    dpId: string;
+    dpId: string;       // 5-digit code, e.g., "17400"
+    clientId: number;   // Integer ID, e.g., 174 (Required for login payload)
+    brokerName: string; // Display name for the UI
     username: string;
+    password: string;
+    boid: string;
     pin: string;
     crn: string;
+    accountNumber: string;
+
+    // Bank details required for ASBA application 
+    bankId?: number;
+    accountBranchId?: number;
+    customerId?: string;
+    accountTypeId?: number;
 }
 
 export const getAccountsFromStorage = (): UserAccount[] => {
