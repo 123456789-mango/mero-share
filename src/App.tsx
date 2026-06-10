@@ -9,7 +9,6 @@ function App() {
   const [accounts, setAccounts] = useState<UserAccount[]>([]);
   const [logs, setLogs] = useState<string[]>([]);
 
-  // Hydrate structural profiles on load
   useEffect(() => {
     setAccounts(getAccountsFromStorage());
   }, []);
